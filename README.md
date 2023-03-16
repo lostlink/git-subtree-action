@@ -45,9 +45,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: nxtlvlsoftware/git-subtree-action@1.1
+      - uses: lostlink/git-subtree-action@v1
         with:
-          repo: 'nxtlvlsoftware/${{ matrix.path }}'
+          repo: 'lostlink/${{ matrix.path }}'
           path: 'src/${{ matrix.path }}'
           deploy_key: ${{ secrets.DOWNSTREAM_GITHUB_DEPLOY_KEY }}
           force: true # will force push to the downstream repository
@@ -74,9 +74,9 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: nxtlvlsoftware/git-subtree-action@1.1
+      - uses: lostlink/git-subtree-action@v1
         with:
-          repo: 'nxtlvlsoftware/my-fancy-package'
+          repo: 'lostlink/my-fancy-package'
           path: 'packages/fancy-package'
           deploy_key: ${{ secrets.DOWNSTREAM_GITHUB_DEPLOY_KEY }}
           tag: true # will use the tag name from the event if true is specified
